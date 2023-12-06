@@ -14,7 +14,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_airbyte_connection"></a> [airbyte\_connection](#module\_airbyte\_connection) | aballiet/connection/airbyte | 0.0.2 |
+| <a name="module_airbyte_connection"></a> [airbyte\_connection](#module\_airbyte\_connection) | aballiet/connection/airbyte | 0.0.4 |
 
 ## Resources
 

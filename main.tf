@@ -26,13 +26,8 @@ resource "airbyte_connection" "default" {
   operation_ids                   = var.normalize ? [airbyte_operation.normalization.0.operation_id] : []
   prefix                          = var.prefix
 
-  schedule_type = var.schedule.type
-  schedule_data = var.schedule.type == "manual" ? null : {
-    basic_schedule = {
-      units     = var.schedule.data.units
-      time_unit = var.schedule.data.time_unit
-    }
-  }
+  schedule_type         = var.schedule.type
+  schedule_data         = var.schedule.type == "manual" ? null : (var.schedule.type == "cron" ? { cron = var.schedule.cron } : { basic_schedule = var.schedule.basic })
   resource_requirements = var.resource_requirements
 
   sync_catalog = {

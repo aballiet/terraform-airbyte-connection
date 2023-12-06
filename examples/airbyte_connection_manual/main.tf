@@ -37,7 +37,7 @@ resource "airbyte_source" "slack" {
 
 module "airbyte_connection" {
   source              = "aballiet/connection/airbyte"
-  version             = "0.0.2"
+  version             = "0.0.4"
   name                = "Slack"
   status              = "active"
   workspace_id        = data.airbyte_workspace.default.workspace_id
@@ -52,17 +52,12 @@ module "airbyte_connection" {
 
   streams = [
     {
-      name                  = "threads"
-      destination_sync_mode = "overwrite"
-      sync_mode             = "full_refresh"
-    },
-    {
       name                  = "channel_members"
       destination_sync_mode = "overwrite"
       sync_mode             = "full_refresh"
     },
     {
-      name                  = "	users"
+      name                  = "users"
       destination_sync_mode = "overwrite"
       sync_mode             = "full_refresh"
     },

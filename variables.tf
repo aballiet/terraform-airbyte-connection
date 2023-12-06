@@ -76,11 +76,11 @@ variable "schedule" {
   }
 
   validation {
-    condition     = var.schedule.type == "basic" && var.schedule.basic != null
+    condition     = var.schedule.type == "basic" && var.schedule.basic != null || var.schedule.type != "basic"
     error_message = "Schedule type is basic but basic data is not provided"
   }
   validation {
-    condition     = var.schedule.type == "cron" && var.schedule.cron != null
+    condition     = var.schedule.type == "cron" && var.schedule.cron != null || var.schedule.type != "cron"
     error_message = "Schedule type is cron but cron data is not provided"
   }
 }
