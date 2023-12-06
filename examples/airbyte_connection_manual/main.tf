@@ -1,4 +1,10 @@
-data "airbyte_workspace" "default" {}
+locals {
+  bq_destination_id = "e03724f5-987b-4f97-abf1-3ed54f3ea126"
+}
+
+data "airbyte_workspace" "default" {
+  workspace_id = "3bd35192-80b7-40ff-82a7-956845321660"
+}
 
 # Here we are using the Slack official source connector
 # But you can use any source connector you want from your own registry
@@ -18,7 +24,11 @@ resource "airbyte_source_definition" "slack" {
 # https://github.com/airbytehq/airbyte/blob/master/airbyte-integrations/connectors/source-slack/source_slack/spec.json#L9
 resource "airbyte_source" "slack" {
   connection_configuration = jsonencode({
-    api_token = "xoxb-1234567890-1234567890123-999999999999999999999"
+    api_token       = "xoxb-1234567890-1234567890123-999999999999999999999"
+    start_date      = "2023-01-01T00:00:00Z"
+    lookback_window = 7
+    join_channels   = false
+    channel_filter  = ["your-channel-name"]
   })
   name                 = "Slack"
   source_definition_id = airbyte_source_definition.slack.source_definition_id
@@ -26,14 +36,13 @@ resource "airbyte_source" "slack" {
 }
 
 module "airbyte_connection" {
-  source  = "aballiet/airbyte-oss/connection"
-  version = "~> 0"
-
+  source              = "aballiet/connection/airbyte"
+  version             = "0.0.2"
   name                = "Slack"
   status              = "active"
   workspace_id        = data.airbyte_workspace.default.workspace_id
-  source_id           = airbyte_source.slack.slack_source_id
-  destination_id      = local.airbyte_bq_growth_production_V1
+  source_id           = airbyte_source.slack.source_id
+  destination_id      = local.bq_destination_id
   destination_dataset = "airbyte_slack"
   normalize           = true
 

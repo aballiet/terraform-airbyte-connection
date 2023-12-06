@@ -1,26 +1,28 @@
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_airbyte"></a> [airbyte](#requirement\_airbyte) | ~> 1.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_airbyte"></a> [airbyte](#provider\_airbyte) | n/a |
+| <a name="provider_airbyte"></a> [airbyte](#provider\_airbyte) | ~> 1.1.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_airbyte_connection"></a> [airbyte\_connection](#module\_airbyte\_connection) | aballiet/airbyte-oss/connection | ~> 0 |
+| <a name="module_airbyte_connection"></a> [airbyte\_connection](#module\_airbyte\_connection) | aballiet/connection/airbyte | 0.0.2 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [airbyte_source.slack](https://registry.terraform.io/providers/hashicorp/airbyte/latest/docs/resources/source) | resource |
-| [airbyte_source_definition.slack](https://registry.terraform.io/providers/hashicorp/airbyte/latest/docs/resources/source_definition) | resource |
-| [airbyte_workspace.default](https://registry.terraform.io/providers/hashicorp/airbyte/latest/docs/data-sources/workspace) | data source |
+| [airbyte_source.slack](https://registry.terraform.io/providers/aballiet/airbyte-oss/latest/docs/resources/source) | resource |
+| [airbyte_source_definition.slack](https://registry.terraform.io/providers/aballiet/airbyte-oss/latest/docs/resources/source_definition) | resource |
+| [airbyte_workspace.default](https://registry.terraform.io/providers/aballiet/airbyte-oss/latest/docs/data-sources/workspace) | data source |
 
 ## Inputs
 
