@@ -24,6 +24,7 @@ resource "airbyte_connection" "default" {
   namespace_format                = var.destination_dataset
   non_breaking_changes_preference = "ignore"
   operation_ids                   = var.normalize ? [airbyte_operation.normalization.0.operation_id] : []
+  prefix                          = var.prefix
 
   schedule_type = var.schedule.type
   schedule_data = var.schedule.type == "manual" ? null : {

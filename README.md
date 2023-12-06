@@ -30,6 +30,7 @@ No modules.
 | <a name="input_destination_id"></a> [destination\_id](#input\_destination\_id) | Airbyte destination ID | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name of the connection | `string` | n/a | yes |
 | <a name="input_normalize"></a> [normalize](#input\_normalize) | n/a | `bool` | n/a | yes |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | n/a | `string` | `""` | no |
 | <a name="input_resource_requirements"></a> [resource\_requirements](#input\_resource\_requirements) | n/a | <pre>object({<br>    cpu_limit      = optional(string)<br>    cpu_request    = optional(string)<br>    memory_limit   = optional(string)<br>    memory_request = optional(string)<br>  })</pre> | `{}` | no |
 | <a name="input_schedule"></a> [schedule](#input\_schedule) | schedule = {<br>      type: "manual" or "basic"<br>      basic: {<br>        units: 24<br>        time\_unit: "hours"<br>      }<br>    }<br><br>    OR for cron schedule<br><br>    schedule = {<br>      type: "cron"<br>      cron: {<br>        cron\_expression: "0 0 * * *"<br>        cron\_timezone: "UTC"<br>      }<br>    } | <pre>object({<br>    type = string<br>    basic = optional(object({<br>      units     = number<br>      time_unit = string<br>    }))<br>    cron = optional(object({<br>      cron_expression = string<br>      cron_timezone   = string<br>      })<br>    )<br>  })</pre> | n/a | yes |
 | <a name="input_source_id"></a> [source\_id](#input\_source\_id) | Airbyte source ID | `string` | n/a | yes |

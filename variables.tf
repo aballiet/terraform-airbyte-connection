@@ -32,6 +32,11 @@ variable "normalize" {
   type = bool
 }
 
+variable "prefix" {
+  type    = string
+  default = ""
+}
+
 variable "schedule" {
   type = object({
     type = string
