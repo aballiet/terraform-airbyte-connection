@@ -42,5 +42,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_connection_id"></a> [connection\_id](#output\_connection\_id) | n/a |
-| <a name="output_connection_name"></a> [connection\_name](#output\_connection\_name) | n/a |
+| <a name="output_connection_id"></a> [connection\_id](#output\_connection\_id) | Airbyte connection Id |
+| <a name="output_connection_name"></a> [connection\_name](#output\_connection\_name) | Airbyte connection name |

@@ -37,7 +37,7 @@ resource "airbyte_source" "slack" {
 
 module "airbyte_connection" {
   source              = "aballiet/connection/airbyte"
-  version             = "0.0.4"
+  version             = "0.0.5"
   name                = "Slack Cron"
   status              = "active"
   workspace_id        = data.airbyte_workspace.default.workspace_id

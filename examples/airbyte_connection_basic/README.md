@@ -2,19 +2,19 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_airbyte"></a> [airbyte-oss](https://registry.terraform.io/providers/aballiet/airbyte-oss/latest) | ~> 1.1.0 |
+| <a name="requirement_airbyte"></a> [airbyte](#requirement\_airbyte) | ~> 1.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_airbyte"></a> [airbyte-oss](https://registry.terraform.io/providers/aballiet/airbyte-oss/latest) | ~> 1.1.0 |
+| <a name="provider_airbyte"></a> [airbyte](#provider\_airbyte) | ~> 1.1.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_airbyte_connection"></a> [airbyte\_connection](#module\_airbyte\_connection) | aballiet/connection/airbyte | 0.0.4 |
+| <a name="module_airbyte_connection"></a> [airbyte\_connection](#module\_airbyte\_connection) | aballiet/connection/airbyte | 0.0.5 |
 
 ## Resources
 
