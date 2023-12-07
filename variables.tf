@@ -46,7 +46,7 @@ variable "schedule" {
     }))
     cron = optional(object({
       cron_expression = string
-      cron_timezone   = string
+      cron_time_zone  = string
       })
     )
   })
@@ -64,8 +64,8 @@ variable "schedule" {
     schedule = {
       type: "cron"
       cron: {
-        cron_expression: "0 0 * * *"
-        cron_timezone: "UTC"
+        cron_expression: "0 0/30 * * * ?"
+        cron_time_zone: "UTC"
       }
     }
   EOT
